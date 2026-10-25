@@ -6,6 +6,8 @@ on:
   push:
     paths:
       - 'images.yaml'
+      - 'scripts/copy.sh'
+      - '.github/workflows/copy.yml'
   workflow_dispatch:
 
 jobs:
