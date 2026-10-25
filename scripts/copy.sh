@@ -19,6 +19,8 @@ mirror() {
   dest="$2"
   multi_arch="$3"
   [ -z "$dest" ] && dest="$(derive_dest "$src")"
+  # 展开 dest 中的 <REGISTRY> / <REGISTRY_NAMESPACE> 占位符
+  dest="$(printf '%s' "$dest" | sed -e "s|<REGISTRY_NAMESPACE>|$REGISTRY_NAMESPACE|g" -e "s|<REGISTRY>|$REGISTRY|g")"
   if [ "$multi_arch" = "true" ]; then
     echo "Copying $src to $dest (all archs)"
     skopeo copy --all "docker://$src" "docker://$dest"
