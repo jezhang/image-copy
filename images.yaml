@@ -1,0 +1,13 @@
+# 镜像复制列表。
+#   dest 可省略，自动推导为 ${REGISTRY}/${REGISTRY_NAMESPACE}/<镜像名>
+#   multi_arch 可省略，默认 false（只复制运行 runner 的架构，ubuntu-24.04 即 linux/amd64）；填 true 复制全部架构
+images:
+  # dest、multi_arch 均省略：自动推导 dest，只复制 runner 架构
+  - src: redis:7.2.5
+  # 显式指定 dest（<...> 替换为你的实际值）
+  - src: confluentinc/cp-kafka:8.3.2
+  - src: mirror.gcr.io/rsmnarts/kowl:latest
+    dest: <REGISTRY>/<REGISTRY_NAMESPACE>/kowl:latest
+  - src: docker.redpanda.com/redpandadata/console:latest
+    dest: <REGISTRY>/<REGISTRY_NAMESPACE>/redpanda-console:latest
+
