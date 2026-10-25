@@ -6,7 +6,7 @@ images:
   - src: redis:7.2.5
   # 显式指定 dest（<...> 替换为你的实际值）
   - src: confluentinc/cp-kafka:8.3.2
-  - src: mirror.gcr.io/rsmnarts/kowl:latest
+  - src: quay.io/cloudhut/kowl:latest
     dest: <REGISTRY>/<REGISTRY_NAMESPACE>/kowl:latest
   - src: docker.redpanda.com/redpandadata/console:latest
     dest: <REGISTRY>/<REGISTRY_NAMESPACE>/redpanda-console:latest
