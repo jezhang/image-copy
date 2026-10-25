@@ -4,9 +4,9 @@ run-name: ${{ github.actor }} run copy image
 
 on:
   push:
-    branches: [ "main" ]
     paths:
       - 'images.yaml'
+  workflow_dispatch:
 
 jobs:
   copy-image:
